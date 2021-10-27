@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.merlin";
+option java_multiple_files = true;
+import "merlin/Descriptor.proto";
+
+message AliasTestMessage1 {
+
+    string id = 1 [(field_alias) = "userID"];
+    string name = 2 [(field_alias) = "userName"];
+
+}
+
+message AliasTestMessage2 {
+
+    string id = 1;
+    string name = 2;
+
+}

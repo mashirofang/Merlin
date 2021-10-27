@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "com.merlin";
+option java_multiple_files = true;
+import "merlin/Descriptor.proto";
+
+message Tof {
+    oneof value {
+        TofInfo1 v1 = 1;
+        TofInfo2 v2 = 2;
+    }
+}
+
+message TofInfo1 {
+    option (clazz) = "com.merlin.beans.OUClass1";
+    int32 id = 1;
+    string name = 2;
+}
+
+message TofInfo2 {
+    option (clazz) = "com.merlin.beans.OUClass2";
+    int32 id = 1;
+    string type = 3;
+}
+

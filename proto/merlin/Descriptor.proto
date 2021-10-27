@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_package = "com.merlin";
+option java_multiple_files = true;
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MessageOptions {
+
+    string clazz = 1001;
+}
+
+extend google.protobuf.FieldOptions {
+
+    string target_clazz = 1001;
+    string field_alias = 1002;
+
+}
+
+
+extend google.protobuf.OneofOptions {
+
+    string oneof_field_alias = 1002;
+
+}

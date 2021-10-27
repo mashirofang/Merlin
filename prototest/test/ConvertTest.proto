@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option java_package = "com.merlin";
+option java_multiple_files = true;
+import "merlin/Descriptor.proto";
+
+message ConvertTestMessage {
+
+    int32 f1 = 1;
+    int32 f2 = 2;
+    int32 f3 = 3;
+    int32 f4 = 4;
+
+    int64 f5 = 5;
+    float f6 = 6;
+    double f7 = 7;
+    bool f8 = 8;
+    string f9 = 9;
+
+    bytes f10 = 10;
+    Type f11 = 11;
+    int64 f12 = 12;
+
+    repeated string f13 = 13;
+    map<string, int32> f14 = 14;
+    map<string, ConvertUser> f15 = 15;
+
+    ConvertUser f16 = 16;
+    repeated string f17 = 17;
+}
+
+enum Type {
+    normal = 0;
+    vip = 1;
+    svip = 2;
+}
+
+message ConvertUser {
+    string id = 1;
+    string name = 2;
+}
+
