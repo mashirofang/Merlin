@@ -9,7 +9,7 @@
 
 ```
 <dependency>
-    <groupId>com.merlin</groupId>
+    <groupId>cn.org.merlin</groupId>
     <artifactId>message-converter</artifactId>
     <version>1.0.0</version>
 </dependency>
@@ -115,7 +115,7 @@ message StringList {
 
 实现 MessageConverter 接口, 自定义 message -> bean 的转换规则, 注册后适用于整个 merlin 实例 , 支持直接调用方法注册和 SPI 注册
 
-[示例](./src/test/java/com.merlin/userdefine/UserConverter.java)
+[示例](./src/test/java/cn.org.merlin/userdefine/UserConverter.java)
 
 ```
   UserConverter userConverter = new UserConverter();
@@ -123,7 +123,7 @@ message StringList {
   Merlin merlin = Merlin.newBuilder().withConverters(converters).build();
 ```
 
-[SPI示例](./src/test/resources/META-INF/services/com.merlin.api.MessageConverter) 
+[SPI示例](./src/test/resources/META-INF/services/cn.org.merlin.api.MessageConverter) 
 在 resources 下创建 META-INF/services/MessageConverter 文件, 文件内一行一个填入实现的转换器
 
 ### 注册 field 转换规则
@@ -145,7 +145,7 @@ message StringList {
 | 9    |  bytes      |   BYTE_STRING | 
 
 
-[示例](./src/test/java/com.merlin/UserDefineAdaptorTest.java)
+[示例](./src/test/java/cn.org.merlin/UserDefineAdaptorTest.java)
 
 ```
   UserConverter userConverter = new UserConverter();
@@ -153,7 +153,7 @@ message StringList {
   Merlin merlin = Merlin.newBuilder().withConverters(converters).build();
 ```
 
-[SPI示例](./src/test/resources/META-INF/services/com.merlin.api.TypeAdaptor) 
+[SPI示例](./src/test/resources/META-INF/services/cn.org.merlin.api.TypeAdaptor) 
 在 resources 下创建 META-INF/services/MessageConverter 文件, 文件内一行一个填入实现的属性转换
 
 
@@ -161,7 +161,7 @@ message StringList {
 
 
 
-[示例](./src/test/java/com.merlin/ProtoAliasTest.java):
+[示例](./src/test/java/cn.org.merlin/ProtoAliasTest.java):
 
 
 merlin 提供了全局别名控制器和 protobuf_field_option 别名能力
@@ -169,7 +169,7 @@ protobuf(注意要 import merlin 的 descriptor):
 ```
 syntax = "proto3";
 
-option java_package = "com.merlin";
+option java_package = "cn.org.merlin";
 option java_multiple_files = true;
 import "merlin/Descriptor.proto";
 
@@ -185,7 +185,7 @@ message AliasTestMessage1 {
 Merlin merlin = Merlin.newBuilder().withAliasController(new AliasManger()).build();
 ```
 
-[SPI示例](./src/test/resources/META-INF/services/com.merlin.api.AliasController) 
+[SPI示例](./src/test/resources/META-INF/services/cn.org.merlin.api.AliasController) 
 在 resources 下创建 META-INF/services/AliasController 文件, 只支持一个
 
 
@@ -196,7 +196,7 @@ Merlin merlin = Merlin.newBuilder().withAliasController(new AliasManger()).build
 
 [proto_example](./prototest/test/OneofTest.proto)
 
-[convert_example](./src/test/java/com.merlin/OneofTypeTest.java)
+[convert_example](./src/test/java/cn.org.merlin/OneofTypeTest.java)
 
 
 
