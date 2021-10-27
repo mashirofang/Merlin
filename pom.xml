@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>merlin</name>
-    <groupId>cn.org.merlin</groupId>
+    <groupId>com.merlin</groupId>
     <artifactId>message-convert</artifactId>
     <version>1.0.0</version>
     <description>protobuf message convert</description>

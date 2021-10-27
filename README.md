@@ -113,7 +113,7 @@ message StringList {
 
 ### 注册 message 转换规则
 
-实现 com.merlin.api.MessageConverter 接口, 自定义 message -> bean 的转换规则, 注册后适用于整个 merlin 实例 , 支持直接调用方法注册和 SPI 注册
+实现 MessageConverter 接口, 自定义 message -> bean 的转换规则, 注册后适用于整个 merlin 实例 , 支持直接调用方法注册和 SPI 注册
 
 [示例](./src/test/java/com.merlin/userdefine/UserConverter.java)
 
@@ -124,11 +124,11 @@ message StringList {
 ```
 
 [SPI示例](./src/test/resources/META-INF/services/com.merlin.api.MessageConverter) 
-在 resources 下创建 META-INF/services/com.merlin.api.MessageConverter 文件, 文件内一行一个填入实现的转换器
+在 resources 下创建 META-INF/services/MessageConverter 文件, 文件内一行一个填入实现的转换器
 
 ### 注册 field 转换规则
 
-实现 com.merlin.api.TypeAdaptor 接口, 自定义 field -> bean 的转换规则, 注册后适用于整个 merlin 实例 , 支持直接调用方法注册和 SPI 注册, 示例:
+实现 TypeAdaptor 接口, 自定义 field -> bean 的转换规则, 注册后适用于整个 merlin 实例 , 支持直接调用方法注册和 SPI 注册, 示例:
 
 ###  支持的类型
 
@@ -154,7 +154,7 @@ message StringList {
 ```
 
 [SPI示例](./src/test/resources/META-INF/services/com.merlin.api.TypeAdaptor) 
-在 resources 下创建 META-INF/services/com.merlin.api.MessageConverter 文件, 文件内一行一个填入实现的属性转换
+在 resources 下创建 META-INF/services/MessageConverter 文件, 文件内一行一个填入实现的属性转换
 
 
 ### 注册别名识别
@@ -186,7 +186,7 @@ Merlin merlin = Merlin.newBuilder().withAliasController(new AliasManger()).build
 ```
 
 [SPI示例](./src/test/resources/META-INF/services/com.merlin.api.AliasController) 
-在 resources 下创建 META-INF/services/com.merlin.api.AliasController 文件, 只支持一个
+在 resources 下创建 META-INF/services/AliasController 文件, 只支持一个
 
 
 ## 继承/多态 -> oneof

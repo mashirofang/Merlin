@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.merlin";
+option java_package = "cn.org.merlin";
 option java_multiple_files = true;
 import "merlin/Descriptor.proto";
 
