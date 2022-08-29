@@ -10,7 +10,7 @@
 ```
 <dependency>
     <groupId>cn.org.merlin</groupId>
-    <artifactId>message-converter</artifactId>
+    <artifactId>message-convert</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -54,7 +54,7 @@
 | 14   |  map         |   map    | container |  
 | 15   |  repeated    |   array  | container |  
 | 16   |  repeated    |   list   | container |  
-| 16   |  repeated    |   set    | container |  
+| 17   |  repeated    |   set    | container |  
 
 ## WRAP 能力
 
